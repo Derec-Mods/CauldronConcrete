@@ -1,5 +1,5 @@
 name: CauldronConcrete
-version: '1.0.1.0'
+version: '1.0.2.0'
 main: io.github.derec4.cauldronConcrete.CauldronConcrete
 api-version: '1.19'
 prefix: DerexXD
