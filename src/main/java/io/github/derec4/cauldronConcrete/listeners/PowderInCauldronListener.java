@@ -16,6 +16,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
 public class PowderInCauldronListener implements Listener {
+    /**
+     * Code inspired by Jake Potrebic
+     * Machine-Maker
+     * from the "PaperTweaks" plugin
+     * @param event
+     */
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onEntityInsideBlock(EntityInsideBlockEvent event) {
         if (!(event.getEntity() instanceof final Item item)) {
