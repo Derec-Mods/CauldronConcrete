@@ -2,6 +2,7 @@ package io.github.derec4.cauldronConcrete.listeners;
 
 import com.destroystokyo.paper.MaterialTags;
 import io.github.derec4.cauldronConcrete.handlers.ConcreteHandler;
+import io.github.derec4.cauldronConcrete.handlers.EffectsHandler;
 import io.papermc.paper.event.entity.EntityInsideBlockEvent;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -48,6 +49,9 @@ public class PowderInCauldronListener implements Listener {
         item.remove();
         levelled.setLevel(currentLevel - 1);
         cauldron.setBlockData(levelled);
+
+        EffectsHandler.splashEffects(cauldron);
+        EffectsHandler.particleEffects(cauldron);
 
     }
 }
