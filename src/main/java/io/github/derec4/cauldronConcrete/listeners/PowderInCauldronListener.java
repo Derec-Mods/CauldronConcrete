@@ -36,19 +36,15 @@ public class PowderInCauldronListener implements Listener {
             return;
         }
 
-        System.out.println("REACH1");
         Block cauldron = event.getBlock();
         if (!(cauldron.getBlockData() instanceof final Levelled levelled)) {
             return;
         }
-        System.out.println("REACH2");
-
 
         int currentLevel = levelled.getLevel();
-        if (currentLevel <= 1) {
+        if (currentLevel < 1) {
             return;
         }
-        System.out.println("REACH3");
 
         World world = item.getWorld();
         Location location = item.getLocation();
@@ -57,8 +53,12 @@ public class PowderInCauldronListener implements Listener {
 
         world.dropItem(location, new ItemStack(ConcreteHandler.turnPowderIntoConcrete(type), amount));
         item.remove();
-        levelled.setLevel(currentLevel - 1);
-        cauldron.setBlockData(levelled);
+        if (currentLevel > 1) {
+            levelled.setLevel(currentLevel - 1);
+            cauldron.setBlockData(levelled);
+        } else {
+            cauldron.setType(Material.CAULDRON); // empty cauldron
+        }
 
         EffectsHandler.splashEffects(cauldron);
         EffectsHandler.particleEffects(cauldron);
