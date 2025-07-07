@@ -32,19 +32,23 @@ public class PowderInCauldronListener implements Listener {
             return;
         }
 
-        if (MaterialTags.CONCRETE_POWDER.isTagged(item.getItemStack())) {
+        if (!MaterialTags.CONCRETE_POWDER.isTagged(item.getItemStack())) {
             return;
         }
 
+        System.out.println("REACH1");
         Block cauldron = event.getBlock();
         if (!(cauldron.getBlockData() instanceof final Levelled levelled)) {
             return;
         }
+        System.out.println("REACH2");
+
 
         int currentLevel = levelled.getLevel();
         if (currentLevel <= 1) {
             return;
         }
+        System.out.println("REACH3");
 
         World world = item.getWorld();
         Location location = item.getLocation();
