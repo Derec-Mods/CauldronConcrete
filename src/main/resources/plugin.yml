@@ -1,0 +1,8 @@
+name: Cauldron Concrete
+version: '1.0.0.0'
+main: io.github.derec4.cauldronConcrete.CauldronConcrete
+api-version: '1.19'
+prefix: DerexXD
+authors: [ DerexXD ]
+description: Vanilla friendly way to get concrete quicker!
+website: https://derec4.github.io/derexsmp/
