@@ -16,7 +16,7 @@ public final class CauldronConcrete extends JavaPlugin {
         Bukkit.getLogger().info("");
         Bukkit.getServer().getConsoleSender().sendMessage(Component.text("  |_______|                             " +
                 "  ").color(NamedTextColor.GREEN));
-        Bukkit.getServer().getConsoleSender().sendMessage(Component.text("  | Derex |     Cauldron Concrete v1.0.0.0").color(NamedTextColor.GREEN));
+        Bukkit.getServer().getConsoleSender().sendMessage(Component.text("  | Derex |     Cauldron Concrete v" + getDescription().getVersion()).color(NamedTextColor.GREEN));
         Bukkit.getServer().getConsoleSender().sendMessage(Component.text("  |_______|     Running on " + Bukkit.getName() + " - " + Bukkit.getVersion()).color(NamedTextColor.GREEN));
         Bukkit.getLogger().info("");
     }
